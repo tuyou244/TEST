@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			background-color: deeppink;
+		}
+		h1{
+			color: white;
+			text-align: center;
+			margin-top: 50px;;
+		}
+		table{
+			margin: 0 auto;
+		}
+		td{
+			font-size: 20px;
+			padding: 20px;
+		}
+	</style>
+	<body>
+		<h1>Pink Contact Form</h1>
+		<table>
+			<tr>
+				<td>ID</td>
+				<td>姓名</td>
+				<td>email</td>
+				<td>comment</td>
+				<td>操作</td>
+			</tr>
+			<?php foreach($data as $k=>$v){?>
+			<tr>
+				<td><?php echo $v['id'];?></td>
+				<td><?php echo $v['name'];?></td>
+				<td><?php echo $v['email'];?></td>
+				<td><?php echo $v['comment'];?></td>
+				<td><a href="deleteliuyan.php?id=<?php echo $v['id']?>">删除</a></td>
+				<td><a href="editliuyan.php?id=<?php echo $v['id'];?>">编辑</a></td>
+			</tr>
+			<?php } ?>
+		</table>
+	</body>
+</html>
